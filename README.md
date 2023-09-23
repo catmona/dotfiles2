@@ -13,7 +13,9 @@ The goal of this repo is to do some spring cleaning! Move over to wayland, remov
 
 ## What configs are there?
 
- - none right now
+ - firefox
+
+   
 ## Roadmap
 
 - Hyprland
@@ -31,8 +33,6 @@ The goal of this repo is to do some spring cleaning! Move over to wayland, remov
 - gtk theme (maybe I can avoid using GK entirely?)
 
 - better discord
-
-- firefox / chromium (decide which to go with for battery life)
 
 - TLP
 
@@ -63,6 +63,10 @@ The goal of this repo is to do some spring cleaning! Move over to wayland, remov
 - spicetify
 
 - startup script? find out how hyprland does this
+
+- fetch
+
+- file explorer
 
 ## Installation
 
