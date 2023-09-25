@@ -8,7 +8,11 @@ Instructions for making a replica of my set-up!
 
 ## Archinstall
 
-TODO - iwctl command
+Connect to wifi
+```bash
+iwctl
+station wlan0 connect "" 
+```
 
 After connecting to wifi or ethernet, run archinstall with the following settings applied
 
