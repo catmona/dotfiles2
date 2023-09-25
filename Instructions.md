@@ -159,7 +159,7 @@ ssh-add ~/.ssh/id_ed25519
 Now add the same ssh key to your guthub account
 https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
 ```bash
-cat ~/.ssh/id_ed25519
+cat ~/.ssh/id_ed25519.pub
 ```
 
 copy your key, head to https://github.com/settings/keys, and add your key to your profile
