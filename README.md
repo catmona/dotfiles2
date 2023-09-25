@@ -70,11 +70,11 @@ The goal of this repo is to do some spring cleaning! Move over to wayland, remov
 
 ## Installation
 
-Use [Stow](https://www.gnu.org/software/stow/#navigation) to manage dotfiles
+[Step by step instructions, from scratch!](https://github.com/catmona/dotfiles2/blob/main/Instructions.md#step-by-step-installation)
 
-```bash
-  
-```
+
+If you already know what you're doing, just clone the repo and use `stow` to manage your dotfiles!
+
     
 ## Color Reference
 
