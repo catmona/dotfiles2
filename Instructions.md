@@ -115,6 +115,8 @@ sudo nano ~/.local/share/applications/btrfs-assistant.desktop
 
 change the "exec" line to `Exec=env QT_QPA_PLATFORM=wayland btrfs-assistant-launcher`
 
+restart your machine so your new snapshots subvolumr gets mounted. 
+
 now run btrfs assistant and make a manual snapshot. You can change your config settings now too, like setting a max # of snapshots to keep and turning off timeline.
 ```bash
 QT_QPA_PLATFORM=wayland btrfs-assistant-launcher
@@ -132,7 +134,13 @@ As a final piece of defense, install informant to give you news about manual int
 
 ```bash
 yay -S informant
-sudo informant read
+sudo usermod -a -G informant user
+```
+
+logout and back in
+
+```bash
+informant read
 ```
 
 
