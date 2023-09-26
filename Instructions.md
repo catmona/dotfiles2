@@ -281,6 +281,7 @@ lf is our super cool terminal file manager! For previews and stuff to work, it h
 ```bash
 sudo pacman -S lf unzip unrar ghostscript bat trash-cli
 yay -S fontpreview
+stow lf
 ```
 
 
