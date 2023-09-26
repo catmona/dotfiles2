@@ -284,6 +284,15 @@ yay -S fontpreview
 stow lf
 ```
 
+## SDDM
+SDDM is the display manager! You can customize its login screen.
+
+```bash
+yay -S sddm-conf-qt
+sddm-conf
+TODO select login screen
+```
+
 
 ## I have so much RAM
 
