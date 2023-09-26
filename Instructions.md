@@ -218,6 +218,7 @@ cd ~/dotfiles2
 stow hyprland
 stow kitty
 stow fonts
+stow wallpapers
 ```
 
 Regenerate your fonts and reopen your terminal!
@@ -288,15 +289,20 @@ stow lf
 SDDM is the display manager! You can customize its login screen.
 
 ```bash
-yay -S sddm-conf-qt
-sddm-conf
-TODO select login screen
+yay -S chili-sddm-theme
+sudo micro /usr/lib/sddm/sddm.conf.d/default.conf                        
 ```
+
+In the [Theme] section, set `Current` = to `chili`
+```bash
+sudo cp ./media/pics/wallpapers/background.jpg /usr/share/sddm/themes/chili/assets 
+```
+
 
 ## Micro
 Micro is the CLI Text Editor
 ```bash
-sudo pacman -S micro
+sudo pacman -S micro wl-clipboard
 stow micro
 ```
 
