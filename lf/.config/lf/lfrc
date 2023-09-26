@@ -60,7 +60,7 @@ map ae $wine "$f"
 
 # Basic Functions
 map . set hidden!
-#map dd trash
+map dd trash
 map dr restore_trash
 map p paste
 map x cut
