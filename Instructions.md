@@ -144,6 +144,28 @@ informant read
 ```
 
 
+## Install Firefox
+
+I use Firefox Nightly with a customized Cascade theme for a oneline look, and betterfox for my user.js, as well as NextDNS.
+
+Download Firefox Nightly - skip this and just `sudo pacman -S firefox` if you'd rather be on stable.
+```bash
+sudo nano /etc/pacman.conf
+```
+
+add the following to the bottom:
+```bash
+[heftig]
+SigLevel = Optional
+Server = https://pkgbuild.com/~heftig/repo/$arch
+```
+
+now install Firefox Nightly
+```bash
+sudo pacman -Syyu
+sudo pacman -S firefox-nightly
+```
+
 
 ## Set up git and github ssh
 
@@ -187,27 +209,41 @@ Now install Stow to manage your dotfiles
 ```bash
 sudo pacman -S stow
 ```
-## Firefox
 
-I use Firefox Nightly with a customized Cascade theme for a oneline look, and betterfox for my user.js, as well as NextDNS.
+## Stow some stuff!
 
-Download Firefox Nightly - skip this and just `sudo pacman -S firefox` if you'd rather be on stable.
+No more default stuff!
 ```bash
-sudo nano /etc/pacman.conf
+cd ~/dotfiles2
+stow hyprland
+stow kitty
+stow fonts
 ```
 
-add the following to the bottom:
+Regenerate your fonts and reopen your terminal!
 ```bash
-[heftig]
-SigLevel = Optional
-Server = https://pkgbuild.com/~heftig/repo/$arch
+fc-cache -f -v
 ```
 
-now install Firefox Nightly
+
+## Customize zsh
+
+Zsh sure is ugly right now, but not for long!
 ```bash
-sudo pacman -Syyu
-sudo pacman -S firefox-nightly
+cd ~/dotfiles2
+rm ../.zshrc
+stow zsh
+yay -S zsh-theme-powerlevel10k
+cd ~/.oh-my-zsh/custom/plugins
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+zsh
 ```
+
+
+
+
+## Customize Firefox
 
 Sign in to firefox sync to sync your bookmarks, passwords, extensions, etc. I recommend installing UBlock Origin if you don't have it already.
 
@@ -237,6 +273,17 @@ yay -S code-marketplace code-features
 ```
 
 Now open vscode, click the lil person in the bottom left, turn on settings sync, and sign in to get your extensions and settings and themes.
+
+
+## lf
+lf is our super cool terminal file manager! For previews and stuff to work, it has a lot of dependencies.
+
+```bash
+sudo pacman -S lf unzip unrar ghostscript bat trash-cli
+yay -S fontpreview
+```
+
+
 ## I have so much RAM
 
 You have so much RAM! Let's use it to speed up linux.
