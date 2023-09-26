@@ -293,6 +293,12 @@ sddm-conf
 TODO select login screen
 ```
 
+## Micro
+Micro is the CLI Text Editor
+```bash
+sudo pacman -S micro
+stow micro
+```
 
 ## I have so much RAM
 
