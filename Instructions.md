@@ -1,4 +1,4 @@
-
+#
 # step-by-step installation
 
 Instructions for making a replica of my set-up!  
@@ -227,7 +227,7 @@ fc-cache -f -v
 ```
 
 
-## Customize zsh
+## Customize zsh & tmux
 
 Zsh sure is ugly right now, but not for long!
 ```bash
@@ -241,7 +241,12 @@ git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ${ZS
 zsh
 ```
 
-
+You can open your dropdown terminal with SUPER+`
+```bash
+sudo pacman -S tmux
+cd ~/dotfiles2 && stow tmux
+tmux source-file .tmux.conf
+```
 
 
 ## Customize Firefox
