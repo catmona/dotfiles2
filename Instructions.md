@@ -263,6 +263,14 @@ ln -s ~/dotfiles2/firefox/chrome
 ln -s ~/dotfiles2/firefox/user.js
 ```
 
+## Laptop battery improvements
+install microcode for your system, tlp, powertop, thermald
+```bash
+TODO
+
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+
 
 ## VSCode
 
