@@ -177,11 +177,11 @@
 
 ; --- clock ---
 
-
+(deflisten time :initial "00:00" "date +'%I:%M'")
 (defwidget clock-box []
     (box :orientation "horizontal"
         :class "background"
-        (label :text "clock")
+        (label :class "time" :text {time})
     )
 )
 
