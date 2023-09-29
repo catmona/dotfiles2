@@ -1,0 +1,187 @@
+
+; --- variables ---
+
+
+
+
+
+; --- layout ---
+
+
+(defwindow dash
+    :stacking "fg"
+    :windowtype "normal"
+    :monitor 0
+    :wm-ignore true
+    :geometry (geometry 
+        :width "35px" 
+        :height "35px"
+        :anchor "top left"
+        :y "45px"
+        :x "20px"
+    )
+    (dash-box)
+)
+
+(defwindow ws
+    :stacking "fg"
+    :monitor 0
+    :windowtype "normal"
+    :wm-ignore true
+    :geometry (geometry 
+        :width "130px" 
+        :height "35px"
+        :anchor "top left"
+        :y "45px"
+        :x "65px"
+    )
+    (workspaces)
+)
+
+(defwindow monitors
+    :stacking "fg"
+    :monitor 0
+    :windowtype "normal"
+    :wm-ignore true
+    :geometry (geometry 
+        :width "100px" 
+        :height "35px"
+        :anchor "top right"
+        :y "45px"
+        :x "100px"
+    )
+    (mon-box)
+)
+
+(defwindow clock
+    :stacking "fg"
+    :monitor 0
+    :windowtype "normal"
+    :wm-ignore true
+    :geometry (geometry 
+        :width "70px" 
+        :height "35px"
+        :anchor "top right"
+        :y "45px"
+        :x "20px"
+    )
+    (clock-box)
+)
+
+
+; --- dash ---
+
+
+(defwidget dash-box []
+    (box :orientation "horizontal"
+        :class "background"
+    )
+)
+
+
+; --- workspaces ---
+
+(deflisten workspaces :initial "[]" "bash scripts/get-workspaces")
+(deflisten current_workspace :initial "1" "bash scripts/get-active-workspace")
+(defwidget workspaces []
+  (eventbox :onscroll "bash scripts/change-active-workspace {} ${current_workspace}" :class "workspaces-widget"
+    (box :space-evenly true
+      (label :text "${workspaces}${current_workspace}" :visible false)
+      (for workspace in workspaces
+        (eventbox :onclick "hyprctl dispatch workspace ${workspace.id}"
+          (box :class "ws-active ${workspace.id == current_workspace ? "ws-" + workspace.id : ""} ${workspace.windows > 0 ? "occupied" : "empty"}"
+            (label :text {workspace.id == 1 ? "♥" : workspace.id == 2 ? "♦" : workspace.id == 3 ? "♠" : "♣"})
+            )
+          )
+        )
+      )
+    )
+  )
+
+
+; --- monitors ---
+
+
+(defvar hover-vol false)
+(defvar hover-wifi false)
+(defvar hover-bat false)
+
+(defwidget monitor [icon showval show hidden]
+    (eventbox
+        :onhover "${EWW_CMD} update ${showval}=true"
+        :onhoverlost "${EWW_CMD} update ${showval}=false"
+        ; :halign "end"
+        ; :width "30"
+        
+        (box :orientation "horizontal"
+            :class "monitor"
+            :space-evenly "false"
+            :hexpand "false"
+            
+            (revealer
+                :transition "slideleft"
+                :reveal {show}
+                :duration "100ms"
+                (label
+                    :class "hidden"
+                    :text {hidden}
+                    :justify "right" 
+                    :orientation "horizontal"
+                )
+            )
+            (label 
+                :class "icon"
+                :text {icon}
+                :justify "right"
+            )
+        )
+    )
+)
+
+
+(defwidget mon-box []
+    (box :orientation "horizontal"
+        :class "mon-box"
+        :halign "end"
+        :space-evenly "false"
+        
+        (monitor
+            :icon "A"
+            :show {hover-vol}
+            :showval "hover-vol"
+            :hidden "AAAAAAAAAAAAAAAAAAAAAAA"
+            :class "volume"
+        )
+        
+        (monitor
+            :icon "B"
+            :show {hover-wifi}
+            :showval "hover-wifi"
+            :hidden "BBBBBBBBBBBBBBBBBBBBBBBBB"
+            :class "wifi"
+        )
+        
+        (monitor
+            :icon "C"
+            :show {hover-bat}
+            :showval "hover-bat"
+            :hidden "${EWW_BATTERY.BAT1.capacity}%"
+            :class "battery"
+        )
+        
+    )
+)
+
+
+; --- clock ---
+
+
+(defwidget clock-box []
+    (box :orientation "horizontal"
+        :class "background"
+        (label :text "clock")
+    )
+)
+
+
+; --- calendar ---
