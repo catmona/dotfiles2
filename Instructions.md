@@ -252,7 +252,9 @@ tmux source-file .tmux.conf
 
 Bar! Dashboard! Raaa!
 ```bash
-yay -S eww ttf-icomoon-feather
+curl -sS https://github.com/elkowar.gpg | gpg --import -i -
+curl -sS https://github.com/web-flow.gpg | gpg --import -i -
+yay -S eww-git ttf-icomoon-feather
 sudo pacman -S jq socat pamixer brightnessctl
 stow eww
 ```
