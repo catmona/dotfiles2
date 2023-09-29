@@ -75,6 +75,7 @@
 (defwidget dash-box []
     (box :orientation "horizontal"
         :class "background"
+        (label :class "dash-icon" :text "")
     )
 )
 

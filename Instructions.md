@@ -357,7 +357,7 @@ systemctl --user enable --now psd
 Moving cache to RAM - 
 https://easylinuxtipsproject.blogspot.com/p/ssd.html?m=1#ID9.1
 
-### Preload Applications
+### Preload Applications - maybe dont do this? need to research
 ```bash
 yay -S preload
 sudo systemctl enable --now preload
@@ -367,5 +367,5 @@ sudo systemctl enable --now preload
 There's a ton of packages that aren't installed by default that you probably want.
 
 ```bash
-sudo pacman -S wget
+sudo pacman -S wget font-manager
 ```
