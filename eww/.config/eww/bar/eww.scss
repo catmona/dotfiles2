@@ -9,6 +9,7 @@
 
 .background {
     background-color: $bg;
+    border-radius: 12px;
 }
 
 
@@ -20,21 +21,26 @@
 
 // WORKSPACES
 
+.ws-holder {
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
 
 .ws {
-    background-color: $bg;
+    //background-color: $bg;
     font-size: 21;
-    margin: 4px -5px 0px -5px;
+    margin-top: 3px;
     border: 0;
     color: $mic-muted;
 }
+
 
 .ws-active {
     color: $text;
 }
 
 .ws-1 {
-    margin-left: 1px;
     color: $ws1;
 }
 
@@ -49,7 +55,6 @@
 }
 
 .ws-4 {
-    margin-right: 1px;
     color: $ws4;
     
 }
@@ -59,27 +64,37 @@
 
 
 .mon-box {
-
+    padding-left: 6px;
+    padding-right: 6px;
 }
 
 .monitor {
-
+    font-size: 18;
+    margin-top: 2px;
+    margin-left: 6px;
+    margin-right: 6px;
+    font-family: 'Icomoon Feather';
 }
 
 .volume {
-    
+    color: $volume;
 }
 
 .wifi {
-    
+    color: $memory;
 }
 
 .battery {
-    
+    color: $power;
+    font-size: 25;
+    margin-left: 10px;
 }
 
 .hidden {
-
+    margin-right: 8px;
+    margin-top: 0px;
+    opacity: 0.75;
+    font-size: 18;
 }
 
 

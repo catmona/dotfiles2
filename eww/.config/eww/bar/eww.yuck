@@ -17,7 +17,7 @@
         :width "35px" 
         :height "35px"
         :anchor "top left"
-        :y "45px"
+        :y "10px"
         :x "20px"
     )
     (dash-box)
@@ -32,7 +32,7 @@
         :width "130px" 
         :height "35px"
         :anchor "top left"
-        :y "45px"
+        :y "10px"
         :x "65px"
     )
     (workspaces)
@@ -47,7 +47,7 @@
         :width "100px" 
         :height "35px"
         :anchor "top right"
-        :y "45px"
+        :y "10px"
         :x "100px"
     )
     (mon-box)
@@ -62,7 +62,7 @@
         :width "70px" 
         :height "35px"
         :anchor "top right"
-        :y "45px"
+        :y "10px"
         :x "20px"
     )
     (clock-box)
@@ -85,11 +85,11 @@
 (deflisten current_workspace :initial "1" "bash scripts/get-active-workspace")
 (defwidget workspaces []
   (eventbox :onscroll "bash scripts/change-active-workspace {} ${current_workspace}" :class "workspaces-widget"
-    (box :space-evenly true
+    (box :space-evenly true :class "ws-holder"
       (label :text "${workspaces}${current_workspace}" :visible false)
       (for workspace in workspaces
-        (eventbox :onclick "hyprctl dispatch workspace ${workspace.id}"
-          (box :class "ws-active ${workspace.id == current_workspace ? "ws-" + workspace.id : ""} ${workspace.windows > 0 ? "occupied" : "empty"}"
+        (eventbox :onclick "hyprctl dispatch workspace ${workspace.id} "
+          (box :class "ws ${workspace.id == current_workspace ? "ws-" + workspace.id : ""} ${workspace.windows > 0 ? "ws-active" : ""}"
             (label :text {workspace.id == 1 ? "♥" : workspace.id == 2 ? "♦" : workspace.id == 3 ? "♠" : "♣"})
             )
           )
@@ -106,7 +106,7 @@
 (defvar hover-wifi false)
 (defvar hover-bat false)
 
-(defwidget monitor [icon showval show hidden]
+(defwidget monitor [icon showval show hidden name]
     (eventbox
         :onhover "${EWW_CMD} update ${showval}=true"
         :onhoverlost "${EWW_CMD} update ${showval}=false"
@@ -114,7 +114,7 @@
         ; :width "30"
         
         (box :orientation "horizontal"
-            :class "monitor"
+            :class "monitor ${name}"
             :space-evenly "false"
             :hexpand "false"
             
@@ -138,6 +138,8 @@
     )
 )
 
+(deflisten ssid :initial "n/a" "iwgetid -r")
+(deflisten vol :initial "100" "pamixer --get-volume")
 
 (defwidget mon-box []
     (box :orientation "horizontal"
@@ -146,27 +148,27 @@
         :space-evenly "false"
         
         (monitor
-            :icon "A"
+            :icon {vol > 50 ? "" : vol > 0 ? "" : ""}
             :show {hover-vol}
             :showval "hover-vol"
-            :hidden "AAAAAAAAAAAAAAAAAAAAAAA"
-            :class "volume"
+            :hidden "${vol}%"
+            :name "volume"
         )
         
         (monitor
-            :icon "B"
+            :icon {ssid == "n/a" ? "" : ""}
             :show {hover-wifi}
             :showval "hover-wifi"
-            :hidden "BBBBBBBBBBBBBBBBBBBBBBBBB"
-            :class "wifi"
+            :hidden {ssid}
+            :name "wifi"
         )
         
         (monitor
-            :icon "C"
+            :icon {EWW_BATTERY.BAT1.capacity > 90 ? "" : EWW_BATTERY.BAT1.capacity > 60 ? "" : EWW_BATTERY.BAT1.capacity > 30 ? "" : EWW_BATTERY.BAT1.capacity > 10 ? "" : ""}
             :show {hover-bat}
             :showval "hover-bat"
             :hidden "${EWW_BATTERY.BAT1.capacity}%"
-            :class "battery"
+            :name "battery"
         )
         
     )
