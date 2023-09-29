@@ -248,6 +248,17 @@ cd ~/dotfiles2 && stow tmux
 tmux source-file .tmux.conf
 ```
 
+## EWW!
+
+Bar! Dashboard! Raaa!
+```bash
+yay -S eww ttf-icomoon-feather
+sudo pacman -S jq socat pamixer brightnessctl
+stow eww
+```
+
+Now log back in to hyprland! Your bar should work!
+
 
 ## Customize Firefox
 
@@ -264,11 +275,12 @@ ln -s ~/dotfiles2/firefox/user.js
 ```
 
 ## Laptop battery improvements
-install microcode for your system, tlp, powertop, thermald
-```bash
-TODO
+Tlp, powertop, thermald!
 
-grub-mkconfig -o /boot/grub/grub.cfg
+```bash
+sudo pacman -S thermald powertop tlp
+sudo systemctl enable --now thermald tlp
+sudo powertop
 ```
 
 
