@@ -139,8 +139,8 @@
     )
 )
 
-(deflisten ssid :initial "n/a" "iwgetid -r")
-(deflisten vol :initial "100" "pamixer --get-volume")
+(defpoll ssid :initial "n/a" :interval "300s" "iwgetid -r")
+(deflisten vol :initial "100" "bash scripts/vollistener")
 
 (defwidget mon-box []
     (box :orientation "horizontal"
