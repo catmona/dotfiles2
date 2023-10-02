@@ -13,14 +13,14 @@
 (defvar size-music-controls 5)
     
 ; toggles
-(defvar height-toggles 140)
+(defvar height-toggles 115)
 (defvar size-toggles 20)
     
 ; weather
-(defvar width-weather 300)   
+(defvar width-weather 200)   
 
 ; monitors
-(defvar width-right-box 160)
+(defvar width-right-box 135)
 
 
 ; --- layout ---
