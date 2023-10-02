@@ -2,5 +2,5 @@
 
 eww close control-center
 if [[ $1 != "" ]]; then
-    pcmanfm $1
+    kitty -e lf $1
 fi

@@ -6,21 +6,21 @@
 (defvar height-top-box 50)
 
 ; profile
-(defvar size-profile-pic 65)
+(defvar size-profile-pic 75)
 
 ; music
 (defvar width-music 150)
 (defvar size-music-controls 5)
     
 ; toggles
-(defvar height-toggles 100)
+(defvar height-toggles 140)
 (defvar size-toggles 20)
     
 ; weather
-(defvar width-weather 172)   
+(defvar width-weather 300)   
 
 ; monitors
-(defvar width-right-box 130)
+(defvar width-right-box 160)
 
 
 ; --- layout ---
@@ -29,13 +29,14 @@
 (defwindow control-center
     :stacking "fg"
     :windowtype "normal"
+    :monitor "0"
     :wm-ignore true
     :geometry (geometry 
         :width "35%" 
         :height "60%"
         :anchor "top left"
-        :y "45px"
-        :x "10px"
+        :y "55px"
+        :x "20px"
     )
     (big-box)
 )
@@ -458,8 +459,8 @@
         :class "monitor-box section"
         :orientation "vertical"
         (monitor-progress ; battery
-            :val {EWW_BATTERY.BAT1.capacity}
-            :hover "${EWW_BATTERY.BAT1.capacity}% battery, ${EWW_BATTERY.BAT1.status}"
+            :val {EWW_BATTERY.BAT0.capacity}
+            :hover "${EWW_BATTERY.BAT0.capacity}% battery, ${EWW_BATTERY.BAT0.status}"
             :icon ""
         )
         (monitor-progress ; memory

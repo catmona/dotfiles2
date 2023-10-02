@@ -73,9 +73,13 @@
 
 
 (defwidget dash-box []
-    (box :orientation "horizontal"
+    (button :orientation "horizontal"
         :class "background"
-        (label :class "dash-icon" :text "")
+        :onclick "../dashboard/scripts/dashboard.sh"
+        (label 
+            :class "dash-icon" 
+            :text ""
+        )
     )
 )
 
@@ -178,7 +182,7 @@
 
 ; --- clock ---
 
-(deflisten time :initial "00:00" "date +'%I:%M'")
+(defpoll time :initial "00:00" :interval "10s" "date +'%I:%M'")
 (defwidget clock-box []
     (box :orientation "horizontal"
         :class "background"
