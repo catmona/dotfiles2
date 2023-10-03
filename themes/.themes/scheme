@@ -9,6 +9,7 @@ dots[1]="tofi/config"
 dots[2]="kitty/colors.conf"
 dots[3]="eww/themes/template.scss"
 dots[4]="../dotfiles2/firefox/chrome/colors.css"
+dots[5]="hypr/theme.conf"
 
 #update configs
 for dot in ${dots[@]}; do
@@ -20,8 +21,13 @@ for dot in ${dots[@]}; do
 done
 
 #update running apps
+echo "reloading configs..."
 eww -c "$configdir/eww/bar" reload 
 eww -c "$configdir/eww/dashboard" reload 
 pkill -SIGUSR1 kitty
+hyprctl reload
 
 #change wallpaper
+#echo "changing wallpaper..."
+
+echo "done!"

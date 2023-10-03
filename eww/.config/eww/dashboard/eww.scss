@@ -7,17 +7,17 @@
 
 .big-box {
     background-color: $bg;
-    border-radius: 10px;
+    border-radius: $rounding;
 }
 
 .background {
     background-color: rgba(0, 0, 0, 0);
-    border-radius: 10px;
+    border-radius: $rounding;
 }
 
 .section {
     margin: 10px;
-    border-radius: 10px;
+    border-radius: $rounding;
     background-color: $section-bg;
     box-shadow: 2px 2px 4px 0px #111;
 }
