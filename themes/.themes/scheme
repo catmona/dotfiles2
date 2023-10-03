@@ -23,17 +23,18 @@ for dot in ${dots[@]}; do
     path="$configdir$dot"
     template="$path.j2"
     
-    j2 $template $theme -o $path
+    j2 $template $theme -o $path &
     echo "...applied to $path"
 done
 
 #update running apps
+sleep 0.4
 echo "reloading configs..."
 eww -c "$configdir/eww/bar" reload 
 eww -c "$configdir/eww/dashboard" reload 
-pkill -SIGUSR1 kitty
-hyprctl reload
-pkill dunst
+pkill -SIGUSR1 kitty 
+hyprctl reload 
+pkill dunst 
 
 #change wallpaper
 #echo "changing wallpaper..."

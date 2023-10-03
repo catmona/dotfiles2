@@ -1,0 +1,25 @@
+{
+	"general": {
+		"channelAmount": true,
+		"pinIcon": false,
+		"unreadAmount": true
+	},
+	"preCategories": {
+		"friends": {
+			"enabled": false,
+			"collapsed": false
+		},
+		"blocked": {
+			"enabled": false,
+			"collapsed": false
+		},
+		"groups": {
+			"enabled": false,
+			"collapsed": false
+		}
+	},
+	"recentOrder": {
+		"channelList": false,
+		"guildList": false
+	}
+}

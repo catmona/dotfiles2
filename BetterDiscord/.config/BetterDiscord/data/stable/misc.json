@@ -1,0 +1,18 @@
+{
+    "version": "1.9.2",
+    "emoteVersion": "v1.5.1",
+    "drawerStates": {
+        "settings": {
+            "editor": true,
+            "window": true,
+            "customcss": true,
+            "addons": false,
+            "developer": true
+        }
+    },
+    "addonlistControls": {
+        "theme": {
+            "view": "list"
+        }
+    }
+}
