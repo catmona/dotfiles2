@@ -1,0 +1,27 @@
+#!/bin/bash 
+
+theme="$HOME/.themes/${1}.ini"
+echo "applying $theme..."
+
+#list of configs to update
+configdir="$HOME/.config/"
+dots[1]="tofi/config"
+dots[2]="kitty/colors.conf"
+dots[3]="eww/themes/template.scss"
+dots[4]="../dotfiles2/firefox/chrome/colors.css"
+
+#update configs
+for dot in ${dots[@]}; do
+    path="$configdir$dot"
+    template="$path.j2"
+    
+    j2 $template $theme -o $path
+    echo "...applied to $path"
+done
+
+#update running apps
+eww -c "$configdir/eww/bar" reload 
+eww -c "$configdir/eww/dashboard" reload 
+pkill -SIGUSR1 kitty
+
+#change wallpaper

@@ -9,6 +9,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 #export PATH=\$PATH:$HOME/.local/bin
 path+=(~/.local/bin)
+path+=(~/.themes/)
 export PATH
 
 
