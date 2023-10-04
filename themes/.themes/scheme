@@ -30,9 +30,9 @@ done
 #vscode
 echo "VScode..."
 syntax="$HOME/.themes/syntax.ini"
-code = ".vscode/settings.json"
-j2 "$syntax.j2" $theme -o $syntax
-# j2 "$code.j2" $syntax -o $code
+code="$HOME/.config/Code/User/settings.json"
+j2 $syntax.j2 $theme -o $syntax
+j2 $code.j2 $syntax -o $code
 
 
 #update running apps
