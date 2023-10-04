@@ -11,9 +11,9 @@ dots[3]="eww/themes/template.scss"
 dots[4]="../dotfiles2/firefox/chrome/colors.css"
 dots[5]="hypr/theme.conf"
 dots[6]="dunst/dunstrc"
+dots[7]="BetterDiscord/themes/template.theme.css"
 #bat
 #micro
-#betterdiscord
 #spicetify
 #QT
 #GTK

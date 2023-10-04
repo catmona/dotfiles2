@@ -1,13 +1,13 @@
 {
 	"all": {
 		"changeLogs": {
-			"BDFDB": "3.2.8",
+			"BDFDB": "3.3.5",
 			"ChatAliases": "2.4.6",
 			"EditUsers": "4.4.3",
 			"JoinedAtDate": "9.9.9",
 			"OpenSteamLinksInApp": "1.1.4",
 			"PinDMs": "1.8.5",
-			"PluginRepo": "2.5.0",
+			"PluginRepo": "2.5.1",
 			"ShowConnections": "1.0.7",
 			"SplitLargeMessages": "1.8.0",
 			"StaffTag": "1.4.8",
