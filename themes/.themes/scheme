@@ -13,8 +13,8 @@ dots[5]="hypr/theme.conf"
 dots[6]="dunst/dunstrc"
 dots[7]="BetterDiscord/themes/template.theme.css"
 #bat
-#micro
 #spicetify
+#vscode
 #QT
 #GTK
 
@@ -37,6 +37,9 @@ hyprctl reload
 pkill dunst 
 
 #change wallpaper
-#echo "changing wallpaper..."
+echo "changing wallpaper..."
+img=$(sed -nr '/^\[img\]/ { :l /^wallpaper[ ]*=/ { s/[^=]*=[ ]*//; p; q;}; n; b l;}' $theme)
+echo $HOME$img
+swww img $HOME$img
 
 echo "done!"
