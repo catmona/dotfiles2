@@ -12,9 +12,7 @@ dots[4]="../dotfiles2/firefox/chrome/colors.css"
 dots[5]="hypr/theme.conf"
 dots[6]="dunst/dunstrc"
 dots[7]="BetterDiscord/themes/template.theme.css"
-#bat
 #spicetify
-#vscode
 #QT
 #GTK
 
@@ -32,11 +30,11 @@ echo "VScode..."
 syntax="$HOME/.themes/syntax.ini"
 code="$HOME/.config/Code/User/settings.json"
 j2 $syntax.j2 $theme -o $syntax
-j2 $code.j2 $syntax -o $code
+j2 $code.j2 $syntax -o $code &
 
 
 #update running apps
-sleep 0.4
+sleep 0.2
 echo "reloading configs..." 
 eww -c "$configdir/eww/bar" reload
 eww -c "$configdir/eww/dashboard" reload &
@@ -48,6 +46,6 @@ pkill -SIGUSR1 kitty
 echo "changing wallpaper..."
 img=$(sed -nr '/^\[img\]/ { :l /^wallpaper[ ]*=/ { s/[^=]*=[ ]*//; p; q;}; n; b l;}' $theme)
 echo $HOME$img
-swww img $HOME$img
+swww img $HOME$img --transition-step 30
 
 echo "done!"
