@@ -2,7 +2,7 @@
 
 
 # --- open control center ---
-eww -c ~/.config/eww/dashboard open --toggle control-center
+eww -c ~/.config/eww/dashboard open --toggle --no-daemonize control-center
 
 if [[ $(eww -c ~/.config/eww/dashboard windows | grep -c "*control-center") == 0 ]]; then
     echo "closing early!"

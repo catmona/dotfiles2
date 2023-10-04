@@ -29,12 +29,12 @@ done
 
 #update running apps
 sleep 0.4
-echo "reloading configs..."
-eww -c "$configdir/eww/bar" reload 
-eww -c "$configdir/eww/dashboard" reload 
-pkill -SIGUSR1 kitty 
+echo "reloading configs..." 
+eww -c "$configdir/eww/bar" reload
+eww -c "$configdir/eww/dashboard" reload &
 hyprctl reload 
 pkill dunst 
+pkill -SIGUSR1 kitty
 
 #change wallpaper
 echo "changing wallpaper..."
