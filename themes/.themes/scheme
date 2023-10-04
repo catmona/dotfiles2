@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-theme="$HOME/.themes/${1}.ini"
+theme="$HOME/.themes/colors/${1}.ini"
 echo "applying $theme..."
 
 #list of configs to update
@@ -26,6 +26,14 @@ for dot in ${dots[@]}; do
     j2 $template $theme -o $path &
     echo "...applied to $path"
 done
+
+#vscode
+echo "VScode..."
+syntax="$HOME/.themes/syntax.ini"
+code = ".vscode/settings.json"
+j2 "$syntax.j2" $theme -o $syntax
+# j2 "$code.j2" $syntax -o $code
+
 
 #update running apps
 sleep 0.4
