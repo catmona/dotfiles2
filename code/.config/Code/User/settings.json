@@ -40,6 +40,7 @@
         "polsby",
         "vendored"
     ],
+    "window.titleBarStyle": "native",
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "editor.defaultFormatter": "esbenp.prettier-vscode",

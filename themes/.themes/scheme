@@ -41,11 +41,15 @@ eww -c "$configdir/eww/dashboard" reload &
 hyprctl reload 
 pkill dunst 
 pkill -SIGUSR1 kitty
+# if [[ $(ps -e | grep firefox) ]]; then
+#     pkill firefox
+#     firefox-nightly &
+# fi
 
 #change wallpaper
 echo "changing wallpaper..."
 img=$(sed -nr '/^\[img\]/ { :l /^wallpaper[ ]*=/ { s/[^=]*=[ ]*//; p; q;}; n; b l;}' $theme)
 echo $HOME$img
-swww img $HOME$img --transition-step 30
+swww img $HOME$img --transition-step 15
 
 echo "done!"
