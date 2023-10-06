@@ -167,6 +167,20 @@
             }
           },
           {
+            "name": "storage.type",
+            "scope": "storage.type",
+            "settings": {
+              "foreground": "{{ syntax.type }}"
+            }
+          },
+          {
+            "name": "constant.language",
+            "scope": "constant.language",
+            "settings": {
+              "foreground": "{{ syntax.constants }}"
+            }
+          },
+          {
             "name": "support.variable.magic.python",
             "scope": "support.variable.magic.python",
             "settings": {
@@ -2219,7 +2233,7 @@
           "peekViewEditor.matchHighlightBorder": "{{ ui.invis }}",
           "peekViewResult.background": "{{ ui.bg2 }}",
           "peekViewResult.fileForeground": "{{ ui.text }}",
-          "peekViewResult.lineForeground": "{{ ui,subtext }}",
+          "peekViewResult.lineForeground": "{{ ui.subtext }}",
           "peekViewResult.matchHighlightBackground": "{{ ui.bg3 }}",
           "peekViewResult.selectionBackground": "{{ ui.bg3 }}",
           "peekViewResult.selectionForeground": "{{ ui.text }}",

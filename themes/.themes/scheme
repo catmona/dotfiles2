@@ -8,7 +8,7 @@ configdir="$HOME/.config/"
 dots[1]="tofi/config"
 dots[2]="kitty/colors.conf"
 dots[3]="eww/themes/template.scss"
-dots[4]="../dotfiles2/firefox/chrome/colors.css"
+dots[4]="../dotfiles2/firefox/chrome/resources/colors.css"
 dots[5]="hypr/theme.conf"
 dots[6]="dunst/dunstrc"
 dots[7]="BetterDiscord/themes/template.theme.css"
@@ -41,10 +41,9 @@ eww -c "$configdir/eww/dashboard" reload &
 hyprctl reload 
 pkill dunst 
 pkill -SIGUSR1 kitty
-# if [[ $(ps -e | grep firefox) ]]; then
-#     pkill firefox
-#     firefox-nightly &
-# fi
+
+ff=$(hyprctl -j clients | jq -r '.[] | select(.class == "firefoxnightly") | .pid')
+echo $ff
 
 #change wallpaper
 echo "changing wallpaper..."
