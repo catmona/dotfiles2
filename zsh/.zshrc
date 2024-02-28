@@ -10,6 +10,8 @@ fi
 #export PATH=\$PATH:$HOME/.local/bin
 path+=(~/.local/bin)
 path+=(~/.themes/)
+path+=(~/.local/share/gem/ruby/3.0.0/bin)
+path+=(~/.npm-global/bin)
 export PATH
 
 

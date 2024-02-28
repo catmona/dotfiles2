@@ -56,7 +56,7 @@ map m
 map e code "$f"
 
 map au unarchive
-map ae $wine "$f"
+map ue $wine "$f"
 
 # Basic Functions
 map . set hidden!

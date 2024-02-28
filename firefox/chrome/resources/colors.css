@@ -1,0 +1,24 @@
+:root {
+    --window-colour:                     #242229;
+    --secondary-colour:                  #222027;
+    --inverted-colour:                   #e7defc;
+
+    /* Containter Tab Colours */
+    --uc-identity-colour-blue:            #b4befe;
+    --uc-identity-colour-turquoise:       #94eaea;
+    --uc-identity-colour-green:           #bec5f8;
+    --uc-identity-colour-yellow:          #f8d6bf;
+    --uc-identity-colour-orange:          #f587a6;
+    --uc-identity-colour-red:             #f587a6;
+    --uc-identity-colour-pink:            #fdb1df;
+    --uc-identity-colour-purple:          #e7defc;
+
+    --uc-identity-colour-blue-muted:      #7ED6DF99;
+    --uc-identity-colour-turquoise-muted: #55E6C199;
+    --uc-identity-colour-green-muted:     #B8E99499;
+    --uc-identity-colour-yellow-muted:    #F7D794CC;
+    --uc-identity-colour-orange-muted:    #F19066FF;
+    --uc-identity-colour-red-muted:       #FC5C65FF;
+    --uc-identity-colour-pink-muted:      #F78FB399;
+    --uc-identity-colour-purple-muted:    #786FA6FF;
+}

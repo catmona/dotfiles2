@@ -48,7 +48,7 @@
     /* Comment this block out if you want to keep the default theme colour. */
     /* This will also work with custom colours from color.firefox.com. */
 
-    @import url(colors.css);
+    @import url(resources/colors.css);
 
 :root {
 
